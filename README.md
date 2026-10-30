@@ -6,7 +6,7 @@ Laboratório educacional e interativo de **Cloud Security e DevSecOps**, baseado
 
 ## Demonstração
 
-Após publicar no GitHub Pages, inclua aqui o endereço público.
+[Acessar o laboratorio interativo PayLivre v2.0](https://alexsabrasil.github.io/paylivre-cloud-security-lab/)
 
 ## Funcionalidades
 
