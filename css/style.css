@@ -1,0 +1,109 @@
+body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070b19;
+            color: #f8fafc;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Grid Pattern Background */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+        /* Node Card Glow Effects */
+        .arch-node {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .arch-node:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.3);
+        }
+        .arch-node-private:hover {
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
+        }
+        .arch-node-danger:hover {
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.3);
+        }
+        /* Flow Path SVG Lines */
+        .flow-line {
+            stroke-dasharray: 8, 8;
+            animation: dash 1.5s linear infinite;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -16;
+            }
+        }
+        /* Terminal Glow */
+        .terminal-box {
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+     /* PayLivre v2 - Destaque dos componentes */
+
+.arch-node {
+    position: relative;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.arch-node.node-selected {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35),
+                0 0 24px rgba(34, 211, 238, 0.25);
+    transform: translateY(-3px);
+}
+
+.arch-node.node-selected::after {
+    content: "SELECIONADO";
+    position: absolute;
+    top: -10px;
+    right: 8px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: #0891b2;
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    z-index: 5;
+}   
+
+/* PayLivre v2 - Camada independente de conexões */
+
+#architectureConnections {
+    overflow: visible;
+    z-index: 15;
+}
+
+#architectureConnections path {
+    fill: none;
+    stroke: #34d399;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.8;
+}
+
+#architectureConnections .connection-active {
+    stroke: #22d3ee;
+    stroke-width: 3;
+    opacity: 1;
+}
